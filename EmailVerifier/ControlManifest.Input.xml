@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest>
   <control namespace="MCAConnect" constructor="EmailVerifier" version="0.0.2" 
-  display-name-key="Email Verifier" description-key="EmailVerifier" control-type="standard">
+  display-name-key="EmailVerifier" description-key="Email Verifier" control-type="standard">
     <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
-    <property name="sampleProperty" display-name-key="Email Verifier" description-key="EmailVerifier" 
+    <property name="sampleProperty" display-name-key="EmailVerifier" description-key="Email Verifier" 
 	of-type="SingleLine.Email" usage="bound" required="true" />
     <!-- 
       Property node's of-type attribute can be of-type-group attribute. 

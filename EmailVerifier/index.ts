@@ -42,7 +42,7 @@ export class EmailVerifier implements ComponentFramework.StandardControl<IInputs
                     (<HTMLInputElement>document.getElementById("in")).classList.remove("InValid");
                     (<HTMLInputElement>document.getElementById("in")).classList.add("Valid");
                 } else {
-                    // the email is NOT valida
+                    // the email is NOT valid
                     //alert('invalid');
                     //(<HTMLInputElement>document.getElementById("out")).innerHTML = 'invalid email';
                     (<HTMLInputElement>document.getElementById("in")).classList.remove("Valid");
@@ -77,7 +77,6 @@ export class EmailVerifier implements ComponentFramework.StandardControl<IInputs
         this._context = context;
         this._notifyOutputChanged = notifyOutputChanged;
         this._container = container;
-        this._container.setAttribute("class","ev-container");
         this._submitClicked = this.submitClick.bind(this);
     
         this._input = document.createElement("input");
@@ -98,11 +97,15 @@ export class EmailVerifier implements ComponentFramework.StandardControl<IInputs
         this._submitButton.setAttribute("value", "Verify");
         this._submitButton.addEventListener("click", this._submitClicked);
 
+		this._value = context.parameters.sampleProperty.raw!;
+        this._input.innerText = this._value;
+                
         this._container.appendChild(this._input);
         this._container.appendChild(this._space)
         this._container.appendChild(this._space)        
         this._container.appendChild(this._output);
         this._container.appendChild(this._submitButton); 
+        
     }
 
     private onKeyUp(event: Event): void {
