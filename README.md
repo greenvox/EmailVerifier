@@ -1,4 +1,4 @@
-# EmailVerifier
+# Email Verifier
 An on-demand email id verifier using PerfectValidation API using PCF
 
 ### This is what it looks like implemented on an email field:
