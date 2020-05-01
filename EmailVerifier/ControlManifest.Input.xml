@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest>
-  <control namespace="EmailVerifier" constructor="EmailVerifier" version="0.0.2" 
-  display-name-key="EmailVerifier" description-key="EmailVerifier" control-type="standard">
+  <control namespace="MCAConnect" constructor="EmailVerifier" version="0.0.2" 
+  display-name-key="Email Verifier" description-key="EmailVerifier" control-type="standard">
     <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
-    <property name="sampleProperty" display-name-key="EmailVerifier" description-key="EmailVerifier" 
-	of-type="SingleLine.Text" usage="bound" required="true" />
+    <property name="sampleProperty" display-name-key="Email Verifier" description-key="EmailVerifier" 
+	of-type="SingleLine.Email" usage="bound" required="true" />
     <!-- 
       Property node's of-type attribute can be of-type-group attribute. 
       Example:
