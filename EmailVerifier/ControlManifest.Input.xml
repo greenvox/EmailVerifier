@@ -1,28 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest>
   <control namespace="MCAConnect" constructor="EmailVerifier" version="0.0.2" 
-  display-name-key="EmailVerifier" description-key="Email Verifier" control-type="standard">
+  display-name-key="Email Verifier" description-key="Email Verifier Control" control-type="standard">
     <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
-    <property name="sampleProperty" display-name-key="EmailVerifier" description-key="Email Verifier" 
+    <property name="controlValue" display-name-key="Email Address" description-key="Email Address to be verified" 
 	of-type="SingleLine.Email" usage="bound" required="true" />
-    <!-- 
-      Property node's of-type attribute can be of-type-group attribute. 
-      Example:
-      <type-group name="numbers">
-        <type>Whole.None</type>
-        <type>Currency</type>
-        <type>FP</type>
-        <type>Decimal</type>
-      </type-group>
-      <property name="sampleProperty" display-name-key="Property_Display_Key" description-key="Property_Desc_Key" of-type-group="numbers" usage="bound" required="true" />
-    -->
+
     <resources>
       <code path="index.ts" order="1"/>
       <css path="css/style.css" order="1" />
-      <!-- UNCOMMENT TO ADD MORE RESOURCES
-      <css path="css/EmailVerifier.css" order="1" />
-      <resx path="strings/EmailVerifier.1033.resx" version="1.0.0" />
-      -->
     </resources>
   </control>
 </manifest>

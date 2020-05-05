@@ -84,6 +84,7 @@ export class EmailVerifier implements ComponentFramework.StandardControl<IInputs
         this._input.setAttribute("id", "in");
         this._input.setAttribute("class", "ev-TextField-field");
         this._input.setAttribute("placeholder", "---")
+        this._input.setAttribute("value", context.parameters.controlValue.raw!);
         //this._input.addEventListener('keyup', this.onKeyUp.bind(this));
         this._breakElement = document.createElement("br");
         this._space = document.createElement("span")
@@ -96,7 +97,6 @@ export class EmailVerifier implements ComponentFramework.StandardControl<IInputs
         this._submitButton.setAttribute("type", "button");
         this._submitButton.setAttribute("value", "Verify");
         this._submitButton.addEventListener("click", this._submitClicked);
-
                 
         this._container.appendChild(this._input);
         this._container.appendChild(this._space)
@@ -149,7 +149,15 @@ export class EmailVerifier implements ComponentFramework.StandardControl<IInputs
 	 */
 	public updateView(context: ComponentFramework.Context<IInputs>): void
 	{
-		// Add code to update control view
+        // Add code to update control view
+        this._value = context.parameters.controlValue.raw!;
+        this._context = context;
+        this._input.setAttribute(
+          "value",
+          context.parameters.controlValue.formatted
+            ? context.parameters.controlValue.formatted
+            : ""
+        );
     }
 
 	/** 
